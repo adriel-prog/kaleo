@@ -41,7 +41,7 @@
       .bounce-slow { animation: bounce-slow 2s infinite; }
 
       /* Leaflet Popups */
-      .leaflet-popup-content-wrapper { border-radius: 8px; }
+      .leaflet-popup-content-wrapper { border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
       .leaflet-popup-content { font-family: 'Lato', sans-serif; color: #333; }
       .leaflet-popup-content h3 { font-family: 'Montserrat', sans-serif; font-weight: bold; margin-bottom: 4px; font-size: 16px; }
       .leaflet-popup-content p { margin: 0; font-size: 14px; }
@@ -77,6 +77,44 @@
         background-image: radial-gradient(#E0E0E0 1px, transparent 1px);
         background-size: 1.5rem 1.5rem;
         background-attachment: fixed;
+      }
+      
+      /* Custom Map Marker */
+      .custom-div-icon {
+        background-color: #111111;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        border: 2px solid #fff;
+        box-shadow: 0 0 5px rgba(0,0,0,0.5);
+        position: relative;
+        transition: transform 0.2s ease-out;
+      }
+      .custom-div-icon::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        left: -4px;
+        top: -4px;
+        width: 20px;
+        height: 20px;
+        box-shadow: 0 0 10px rgba(17, 17, 17, 0.6);
+        animation: pulse-marker 2s infinite ease-in-out;
+      }
+      .custom-div-icon.hovered {
+        transform: scale(1.5);
+      }
+      .leaflet-popup-open .leaflet-marker-icon .custom-div-icon {
+        transform: scale(1.5);
+      }
+       .leaflet-popup-open .leaflet-marker-icon .custom-div-icon::after {
+        animation: none;
+      }
+
+      @keyframes pulse-marker {
+        0% { transform: scale(1); opacity: 0.7; }
+        50% { transform: scale(1.8); opacity: 0; }
+        100% { transform: scale(1); opacity: 0; }
       }
     </style>
     <script>

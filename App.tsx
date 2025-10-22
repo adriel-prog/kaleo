@@ -10,6 +10,9 @@ import Footer from './components/Footer';
 import { parseMembersCSV } from './utils/csvParser';
 import type { BandMember } from './types';
 import ErrorBoundary from './components/ErrorBoundary';
+// FIX: Inlined CSV data into a TS module to bypass build/fetch issues.
+// This is the most robust method, ensuring data is always available at runtime.
+import { membersCsvData } from './source/membersData';
 
 const AiAgent = lazy(() => import('./components/AiAgent'));
 
@@ -19,25 +22,21 @@ function App() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchMembers = async () => {
+    const loadMembers = () => {
       try {
-        const response = await fetch('/source/members.csv');
-        if (!response.ok) {
-          throw new Error(`Erro na rede: ${response.statusText}`);
-        }
-        const csvText = await response.text();
-        const parsedMembers = parseMembersCSV(csvText);
+        // The CSV content is now imported from a dedicated TS module.
+        const parsedMembers = parseMembersCSV(membersCsvData);
         setMembers(parsedMembers);
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : 'Ocorreu um erro desconhecido ao carregar os dados dos membros.';
         setError(errorMessage);
-        console.error('Falha ao buscar ou processar o CSV de membros:', err);
+        console.error('Falha ao processar o CSV de membros:', err);
       } finally {
         setIsLoading(false);
       }
     };
 
-    fetchMembers();
+    loadMembers();
   }, []);
 
   return (

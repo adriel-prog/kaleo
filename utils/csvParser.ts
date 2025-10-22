@@ -7,7 +7,7 @@ import type { BandMember } from '../types';
  * @returns An array of BandMember objects.
  */
 export const parseMembersCSV = (csvText: string): BandMember[] => {
-  const lines = csvText.trim().split('\n');
+  const lines = csvText.trim().split('\n').filter(line => line.trim() !== '');
   if (lines.length < 2) return []; // Return empty if no data rows
 
   const header = lines[0].split(',').map(h => h.trim());

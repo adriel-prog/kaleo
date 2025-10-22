@@ -89,7 +89,7 @@ const EventsMap: React.FC = () => {
   };
 
   return (
-    <Section title="Cidades Visitadas" className="bg-bg-subtle section-divider-top bg-dotted">
+    <Section id="cidades" title="Cidades Visitadas" className="bg-bg-subtle section-divider-top bg-dotted">
       <div className="relative rounded-lg bg-white shadow-xl aspect-video overflow-hidden shadow-inner-lg">
         <div ref={mapRef} style={{ width: '100%', height: '100%' }} />
       </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
+import Navigation from './components/Navigation';
 import Header from './components/Header';
 import About from './components/About';
 import Timeline from './components/Timeline';
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <div className="bg-background">
+      <Navigation />
       <Header />
       <main>
         <About />

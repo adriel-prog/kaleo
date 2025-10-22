@@ -62,7 +62,7 @@ const Members: React.FC<MembersProps> = ({ members, isLoading, error }) => {
   };
 
   return (
-    <Section title="Membros" className="section-divider">
+    <Section id="membros" title="Membros" className="section-divider">
       {renderContent()}
     </Section>
   );

@@ -34,7 +34,7 @@ const Timeline: React.FC = () => {
   };
 
   return (
-    <Section title="Nossa Jornada" className="bg-bg-subtle section-divider">
+    <Section id="jornada" title="Nossa Jornada" className="bg-bg-subtle section-divider">
       <div ref={containerRef} className="relative">
         {/* Central static line */}
         <div className="absolute left-4 md:left-1/2 w-0.5 h-full bg-line" aria-hidden="true"></div>

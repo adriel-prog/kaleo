@@ -42,6 +42,7 @@ const Header: React.FC = () => {
 
   return (
     <header 
+      id="home"
       className="relative h-screen flex items-center justify-center overflow-hidden section-divider"
     >
       <div

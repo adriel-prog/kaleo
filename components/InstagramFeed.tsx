@@ -5,7 +5,7 @@ import Section from './Section';
 
 const InstagramFeed: React.FC = () => {
   return (
-    <Section title="Siga-nos no Instagram" className="bg-dotted">
+    <Section id="instagram" title="Siga-nos no Instagram" className="bg-dotted">
       <div className="border border-line rounded-lg shadow-xl overflow-hidden">
         <iframe
           src={config.instagram.embedUrl}

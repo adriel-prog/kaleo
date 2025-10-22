@@ -4,7 +4,7 @@ import Section from './Section';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-16 sm:py-24 section-divider">
+    <section id="about" className="py-16 sm:py-24 section-divider scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 fade-in-up">
             <div className="text-center mb-12">
                 <h2 className="text-4xl font-display font-bold text-primary">{config.about.title}</h2>

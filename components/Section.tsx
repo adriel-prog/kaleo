@@ -4,10 +4,11 @@ interface SectionProps {
   children: React.ReactNode;
   title: string;
   className?: string;
+  id?: string;
 }
 
-const Section: React.FC<SectionProps> = ({ children, title, className = '' }) => (
-  <section className={`py-16 sm:py-24 ${className}`}>
+const Section: React.FC<SectionProps> = ({ children, title, className = '', id }) => (
+  <section id={id} className={`py-16 sm:py-24 scroll-mt-20 ${className}`}>
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 fade-in-up">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-display font-bold text-primary">{title}</h2>

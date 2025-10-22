@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { config } from '../config';
 
 const ParticleBackground: React.FC = () => (
@@ -32,11 +32,26 @@ const ParticleBackground: React.FC = () => (
 
 
 const Header: React.FC = () => {
+  const [offsetY, setOffsetY] = useState(0);
+  const handleScroll = () => setOffsetY(window.pageYOffset);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <header 
-      className="relative h-screen flex items-center justify-center bg-cover bg-top section-divider"
-      style={{ backgroundImage: `url(${config.header.bgImageUrl})` }}
+      className="relative h-screen flex items-center justify-center overflow-hidden section-divider"
     >
+      <div
+        className="absolute top-0 left-0 w-full h-[150%] bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${config.header.bgImageUrl})`,
+          transform: `translateY(${offsetY * 0.5}px)`,
+          willChange: 'transform'
+        }}
+      />
       <ParticleBackground />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10"></div>
       <div className="relative z-10 text-center text-white p-4">

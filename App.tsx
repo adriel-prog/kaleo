@@ -8,6 +8,7 @@ import InstagramFeed from './components/InstagramFeed';
 import Footer from './components/Footer';
 import { INITIAL_MEMBERS_DATA } from './constants';
 import type { BandMember } from './types';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const AiAgent = lazy(() => import('./components/AiAgent'));
 
@@ -39,9 +40,11 @@ function App() {
         <InstagramFeed />
       </main>
       <Footer />
-      <Suspense fallback={null}>
-        <AiAgent members={members} />
-      </Suspense>
+      <ErrorBoundary>
+        <Suspense fallback={null}>
+          <AiAgent members={members} />
+        </Suspense>
+      </ErrorBoundary>
     </div>
   );
 }

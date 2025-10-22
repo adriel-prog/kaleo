@@ -1,0 +1,29 @@
+import type { TimelineEvent, BandMember, TourLocation } from './types';
+
+// FIX: Added missing `imageUrl` property to each timeline event to satisfy the `TimelineEvent` type.
+export const INITIAL_TIMELINE_DATA: TimelineEvent[] = [
+  { id: 1, year: '2014', description: 'Fundação da banda Kaleo no segundo semestre.', imageUrl: 'https://scontent-for2-2.cdninstagram.com/v/t51.29350-15/371745829_311629621376355_8647324766743429213_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjE0NDB4MTA4MC5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-for2-2.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2QHiXU0LRo_eMu1e_i6d_W0VYwDjYZVfP7AmMXrLRF6Q1ryFIVgRgB2c04O6x5j-zzFWGpfZlEIsKmbXw-gTu9jU&_nc_ohc=_fZz_lfKJI0Q7kNvwGDxZJS&_nc_gid=v0yuxSDaJTArgTe27k5mXg&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MzE3OTAwODE3NzUyMTE3ODIxMQ%3D%3D.3-ccb7-5&oh=00_AffvTYF2p4550eB167wkfxoOTWuZkZEl60rErXW8YEFEPw&oe=68FDF95E&_nc_sid=22de044' },
+  { id: 2, year: '2015', description: 'Lançamento do CD Prosseguir na conferência "Somos o povo da cruz".', imageUrl: 'https://scontent-for2-1.cdninstagram.com/v/t51.2885-15/26157937_897552880454090_3927930175546720256_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0uaW1hZ2VfdXJsZ2VuLjcyMHg1NDAuc2RyLmYyODg1LmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-for2-1.cdninstagram.com&_nc_cat=102&_nc_oc=Q6cZ2QFCY24AmL9EkyuZt2qGql_e7kWu7CXV-K3pC-SwHzeAKYwrvyRssXoSyZD7TwA0kQztTa6USNfDzKOngYE39QKy&_nc_ohc=0GT9ychAP4sQ7kNvwESdCJF&_nc_gid=HeZLxYH0qpHq2_NmKZxHNA&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MTY5NzMwOTUwNzU5MzgxNTcxNQ%3D%3D.3-ccb7-5&oh=00_Afde9N_KEw6jiF67VQx8AY8iF43fGoz5MBzeXeXMh5EcAw&oe=68FCB562&_nc_sid=22de04' },
+  { id: 3, year: '2018', description: 'Participação na Marcha para Jesus.', imageUrl: 'https://scontent-for2-1.cdninstagram.com/v/t51.2885-15/33567749_185174202141923_6140482943153340416_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0uaW1hZ2VfdXJsZ2VuLjEwNDB4NzgwLnNkci5mMjg4NS5kZWZhdWx0X2ltYWdlLmMyIn0&_nc_ht=scontent-for2-1.cdninstagram.com&_nc_cat=111&_nc_oc=Q6cZ2QFgr2IYx0x7T4p-hbYcenprX0KFSuTCjAi2mz3R8xkvO6DquAUb-Bi7ptkY-9V0-g1xtrU6kBikANJSm68FPQGo&_nc_ohc=e5CQRLeL-qEQ7kNvwHVp7mV&_nc_gid=nP_IHN8NhgQygKAndifEYA&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MTc5MjI4Mjg4MDMzNzMxMDE4Mg%3D%3D.3-ccb7-5&oh=00_Afe4PKjm4VJGc47mmVbiy7UCandlDV59sSug0B2d2NdiUQ&oe=68FCBFBE&_nc_sid=22de04' },
+  { id: 4, year: '2024', description: 'Participação na Marcha para Jesus em CAXIAS.', imageUrl: 'https://scontent-for2-2.cdninstagram.com/v/t51.29350-15/456697441_734922595426484_1051321183568928338_n.webp?stp=dst-jpg_e35_p640x640_sh0.08_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0uaW1hZ2VfdXJsZ2VuLjE0NDB4MTgwMC5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-for2-2.cdninstagram.com&_nc_cat=108&_nc_oc=Q6cZ2QGoe3AxzO2qaHiXxZJ8HTJobEPXn7gCPW0mVHUULg9k3sKwsf4h0wMwNMe35rX68NNBlbffB-8SMudv_-6Y_EwI&_nc_ohc=emXiteodDSYQ7kNvwEIlytG&_nc_gid=-bhVv_x6MXF6XVzR_W_ChA&edm=AP4sbd4BAAAA&ccb=7-5&ig_cache_key=MzQ0MjExNTg4NTg2NDk5NDg5NQ%3D%3D.3-ccb7-5&oh=00_Affx8RMz2cWJlgSvSX5BG08cukfv4b1UzSVGVSzc-iMuow&oe=68FCC353&_nc_sid=7a9f4b' },
+  { id: 5, year: '2025', description: '11 anos de ministério, continuando com sede e favor pelo Reino de Deus.', imageUrl: 'https://scontent-for2-2.cdninstagram.com/v/t51.82787-15/554982451_18304620994216915_7180656637068907892_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ig_cache_key=MzczMTg4ODQ4ODIxNzIzMzI2NQ%3D%3D.3-ccb1-7&ccb=1-7&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4OTU5LnNkci5DMyJ9&_nc_ohc=zv9s8PrPbeQQ7kNvwGwDeDG&_nc_oc=AdkRYEbabgUBzqoUvYv7MLS_aD3pfDtKbxCQCb5MqetA-CyUFDRcYlusMf1NgcSTMVURPTIZlhRVerRDl9Apf7nW&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-for2-2.cdninstagram.com&_nc_gid=-bhVv_x6MXF6XVzR_W_ChA&oh=00_AfeY-ywlfutz2ZJZj8QQWAJqa2oaPobSXD3WnGm0Ek75Ug&oe=68FCAC47' },
+];
+
+export const INITIAL_MEMBERS_DATA: BandMember[] = [
+  {
+    id: 1,
+    name: 'Andre',
+    role: 'Vocal',
+    photoUrl: 'https://scontent-for2-1.cdninstagram.com/v/t51.2885-19/508654625_18069503204057713_1823400494724732757_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-for2-1.cdninstagram.com&_nc_cat=101&_nc_oc=Q6cZ2QGaYjFQZldABjUuLoHflC-DcRBSuNdBPoLzmC9SBO9lH8XJGdEWyyAZf2r9Piz5xhoLhaLaFuMhZMycXYaRGd1g&_nc_ohc=KjWuc5E8OJQQ7kNvwE-GWM3&_nc_gid=MuDq2ulvEA5VKc3OJMC0PQ&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AffaEMu-UqErI-71ha_FCJjm3wLzaBNbhmbEwok-CWI4ew&oe=68FE1AB7&_nc_sid=7d3ac5',
+    instagram: 'https://www.instagram.com/andremclelry/',
+  },
+];
+
+export const INITIAL_LOCATIONS_DATA: TourLocation[] = [
+    { id: 1, city: 'Barra do Corda', state: 'MA', local: 'Igreja Batista', date: '2023', description: 'Louvor especial Kaleo', latitude: -5.5067, longitude: -45.2409 },
+    { id: 2, city: 'Itapecuru Mirim', state: 'MA', local: 'Igreja local', date: '2022', description: 'Noite de adoração', latitude: -3.3923, longitude: -44.358 },
+    { id: 3, city: 'Coelho Neto', state: 'MA', local: 'IBPAZ Coelho Neto', date: '2021', description: 'Congresso Jovem', latitude: -4.2526, longitude: -43.0109 },
+    { id: 4, city: 'São João do Sóter', state: 'MA', local: 'Igreja Batista', date: '2020', description: 'Louvor Kaleo', latitude: -5.1169, longitude: -43.8168 },
+    { id: 5, city: 'Aldeias Altas', state: 'MA', local: 'Igreja local', date: '2019', description: 'Culto especial', latitude: -4.6253, longitude: -43.4708 },
+    { id: 6, city: 'Teresina', state: 'PI', local: 'Marcha para Jesus', date: '2024', description: 'Grande participação Kaleo', latitude: -5.0919, longitude: -42.8034 },
+];

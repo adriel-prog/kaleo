@@ -1,9 +1,13 @@
-<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="24" height="24" fill="white"/>
-    <!-- Thin outer line -->
-    <path d="M11.5 19.5C7.36 19.5 7.36 4.5 11.5 4.5" stroke="black" stroke-width="0.75" stroke-linecap="round"/>
-    <path d="M11.5 4.5L19 12L11.5 19.5" stroke="black" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"/>
-    <!-- Thick inner line -->
-    <path d="M10 19C6.16 19 6.16 5 10 5" stroke="black" stroke-width="2" stroke-linecap="round"/>
-    <path d="M10 5L17.5 12L10 19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<svg viewBox="0 0 84 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="84" height="110" fill="white"/>
+<g stroke="black" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Thin outline part -->
+  <path d="M50.13 18.23C29.33 21.53 26.63 68.63 50.13 68.63" stroke="black" stroke-width="3"/>
+  <path d="M45.93 15.23L75.33 42.23L45.93 68.63L37.83 62.63L59.73 42.23L37.83 21.23L45.93 15.23Z" fill="white" stroke="black" stroke-width="3"/>
+  <!-- Thick main part -->
+  <path d="M45.93 21.23C27.33 24.53 25.43 62.63 45.93 62.63" stroke="black" stroke-width="8"/>
+  <path d="M45.93 21.23L68.73 42.23L45.93 62.63" stroke="black" stroke-width="8"/>
+</g>
+<text x="42" y="90" font-family="Montserrat, sans-serif" font-size="10" font-weight="700" text-anchor="middle" fill="black">KALEO</text>
+<text x="42" y="100" font-family="Lato, sans-serif" font-size="5" text-anchor="middle" fill="black">Ministério de Louvor</text>
 </svg>

@@ -24,9 +24,24 @@ const Navigation: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const closeMenu = () => {
-      setIsMenuOpen(false);
-  }
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const href = e.currentTarget.getAttribute('href');
+    if (!href) return;
+
+    const targetId = href.substring(1); // remove the '#'
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    
+    // Close mobile menu if open
+    if (isMenuOpen) {
+        setIsMenuOpen(false);
+    }
+  };
+
 
   return (
     <>
@@ -34,12 +49,12 @@ const Navigation: React.FC = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0">
-              <a href="#home" className="text-white font-display font-bold text-2xl tracking-wider">KALEO</a>
+              <a href="#home" onClick={handleLinkClick} className="text-white font-display font-bold text-2xl tracking-wider">KALEO</a>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 {navLinks.map((link) => (
-                  <a key={link.name} href={link.href} className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                  <a key={link.name} href={link.href} onClick={handleLinkClick} className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                     {link.name}
                   </a>
                 ))}
@@ -73,7 +88,7 @@ const Navigation: React.FC = () => {
       <div className={`fixed inset-0 z-40 bg-primary/95 backdrop-blur-sm md:hidden transition-opacity duration-300 ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} id="mobile-menu">
         <div className="pt-20 pb-3 space-y-1 text-center">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} onClick={closeMenu} className="text-gray-200 hover:text-white block px-3 py-4 rounded-md text-xl font-display font-bold">
+            <a key={link.name} href={link.href} onClick={handleLinkClick} className="text-gray-200 hover:text-white block px-3 py-4 rounded-md text-xl font-display font-bold">
               {link.name}
             </a>
           ))}

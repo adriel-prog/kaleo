@@ -73,7 +73,7 @@ const Timeline: React.FC = () => {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

@@ -14,10 +14,6 @@ const Timeline: React.FC = () => {
       const { top, height } = containerRef.current.getBoundingClientRect();
       const screenHeight = window.innerHeight;
       
-      // Calculate how much of the container is visible
-      const visibleHeight = Math.max(0, Math.min(screenHeight, screenHeight - top, top + height));
-      const progress = visibleHeight / height;
-      
       // Start drawing when the top of the component is halfway up the screen
       if (top < screenHeight / 1.5) {
         // Calculate the height of the line based on scroll position within the container

@@ -14,7 +14,7 @@ export const INITIAL_MEMBERS_DATA: BandMember[] = [
     id: 1,
     name: 'Andre',
     role: 'Vocal',
-    photoUrl: 'https://scontent-for2-1.cdninstagram.com/v/t51.2885-19/508654625_18069503204057713_1823400494724732757_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-for2-1.cdninstagram.com&_nc_cat=101&_nc_oc=Q6cZ2QGaYjFQZldABjUuLoHflC-DcRBSuNdBPoLzmC9SBO9lH8XJGdEWyyAZf2r9Piz5xhoLhaLaFuMhZMycXYaRGd1g&_nc_ohc=KjWuc5E8OJQQ7kNvwE-GWM3&_nc_gid=MuDq2ulvEA5VKc3OJMC0PQ&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AffaEMu-UqErI-71ha_FCJjm3wLzaBNbhmbEwok-CWI4ew&oe=68FE1AB7&_nc_sid=7d3ac5',
+    photoUrl: 'https://images.weserv.nl/?url=https%3A%2F%2Fscontent-for2-1.cdninstagram.com%2Fv%2Ft51.2885-19%2F508654625_18069503204057713_1823400494724732757_n.jpg%3Fefg%3DeyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0%26_nc_ht%3Dscontent-for2-1.cdninstagram.com%26_nc_cat%3D101%26_nc_oc%3DQ6cZ2QGaYjFQZldABjUuLoHflC-DcRBSuNdBPoLzmC9SBO9lH8XJGdEWyyAZf2r9Piz5xhoLhaLaFuMhZMycXYaRGd1g%26_nc_ohc%3DKjWuc5E8OJQQ7kNvwE-GWM3%26_nc_gid%3DMuDq2ulvEA5VKc3OJMC0PQ%26edm%3DALGbJPMBAAAA%26ccb%3D7-5%26oh%3D00_AffaEMu-UqErI-71ha_FCJjm3wLzaBNbhmbEwok-CWI4ew%26oe%3D68FE1AB7%26_nc_sid%3D7d3ac5&output=jpg',
     instagram: 'https://www.instagram.com/andremclelry/',
   },
 ];

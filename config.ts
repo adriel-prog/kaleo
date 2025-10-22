@@ -7,15 +7,15 @@ export const config = {
     subtitle: 'Ministério de Louvor da IBPAZ',
     bgImageUrl: 'https://images.weserv.nl/?url=https%3A%2F%2Fscontent-for2-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F554982451_18304620994216915_7180656637068907892_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D103%26ig_cache_key%3DMzczMTg4ODQ4ODIxNzIzMzI2NQ%253D%253D.3-ccb1-7%26ccb%3D1-7%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4OTU5LnNkci5DMyJ9%26_nc_ohc%3Dzv9s8PrPbeQQ7kNvwGwDeDG%26_nc_oc%3DAdkRYEbabgUBzqoUvYv7MLS_aD3pfDtKbxCQCb5MqetA-CyUFDRcYlusMf1NgcSTMVURPTIZlhRVerRDl9Apf7nW%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-for2-2.cdninstagram.com%26_nc_gid%3DQklDljX4OXSEqESEZeiMxQ%26oh%3D00_AfcWWbXXYOqD8NdMb00sLOLkyNVmK94yyMk1GS9j0y375g%26oe%3D68FCAC47&output=jpg',
   },
-  about: {
-    title: 'Nossa História',
-    paragraphs: [
-      'A KALEO surgiu em 2014 no segundo semestre, com o intuito até pelo nome de ser uma voz nessa geração. A banda idealizada para o rock começou a lançar "Te buscar" e "Meu bem maior".',
-      'No ano seguinte, impulsionada pelo pastor da rede jovem da época, Esdras Antunes, foram lançadas outras músicas como "Mais que palavras", "Apascenta-me", "Céu na Terra" e "Prosseguir". Na conferência de jovens "Somos o povo da cruz", lançamos o CD "Prosseguir", de grande aceitação no meio da igreja.',
-      'Ao longo dos anos, o ministério passou por várias formações, participando de eventos dentro e fora da igreja. Hoje, conta com uma grande equipe que, após 11 anos, continua com sede e favor no serviço do Reino de Deus.',
-      'Somos do Ministério IBPAZ, liderados pelos apóstolos Paulo Jorge Tavares e Sílvia Tavares.',
-    ],
-  },
+about: {
+  title: 'Nossa História',
+  paragraphs: [
+    ' o ministério surgiu com o desejo de usar a música como instrumento de transformação, proclamando o Evangelho através do som, da arte e da paixão por Jesus.',
+    'Idealizada para o rock cristão, a banda começou lançando canções como “Te Buscar” e “Meu Bem Maior”, que rapidamente tocaram corações. No ano seguinte, impulsionados pelo pastor Esdras Antunes, líder da rede jovem da época, o grupo lançou outras músicas marcantes, como “Mais que Palavras”, “Apascenta-me”, “Céu na Terra” e “Prosseguir” — canções que firmaram a identidade da banda e culminaram no lançamento do álbum Prosseguir, durante a conferência de jovens Somos o Povo da Cruz.',
+    'Desde então, o KALEO tem caminhado firme, participando de eventos dentro e fora das igrejas, ministrando em conferências, marchas e encontros pelo estado do Maranhão e em outras regiões. Ao longo dos anos, muitas formações se revezaram, mas o coração do ministério permanece o mesmo: servir com sede e favor no Reino de Deus.',
+    'Hoje, após 11 anos de história, o KALEO segue sendo uma voz viva que inspira fé, unidade e adoração genuína — proclamando que vale a pena prosseguir quando o foco é Cristo.'
+  ],
+},
   instagram: {
       embedUrl: 'https://www.instagram.com/ministeriokaleooficial/embed/',
       profileUrl: 'https://www.instagram.com/ministeriokaleooficial/',

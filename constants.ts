@@ -9,16 +9,6 @@ export const INITIAL_TIMELINE_DATA: TimelineEvent[] = [
   { id: 5, year: '2025', description: '11 anos de ministério, continuando com sede e favor pelo Reino de Deus.', imageUrl: 'https://scontent-for2-2.cdninstagram.com/v/t51.82787-15/554982451_18304620994216915_7180656637068907892_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ig_cache_key=MzczMTg4ODQ4ODIxNzIzMzI2NQ%3D%3D.3-ccb1-7&ccb=1-7&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4OTU5LnNkci5DMyJ9&_nc_ohc=zv9s8PrPbeQQ7kNvwGwDeDG&_nc_oc=AdkRYEbabgUBzqoUvYv7MLS_aD3pfDtKbxCQCb5MqetA-CyUFDRcYlusMf1NgcSTMVURPTIZlhRVerRDl9Apf7nW&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-for2-2.cdninstagram.com&_nc_gid=-bhVv_x6MXF6XVzR_W_ChA&oh=00_AfeY-ywlfutz2ZJZj8QQWAJqa2oaPobSXD3WnGm0Ek75Ug&oe=68FCAC47' },
 ];
 
-export const INITIAL_MEMBERS_DATA: BandMember[] = [
-  {
-    id: 1,
-    name: 'Andre',
-    role: 'Vocal',
-    photoUrl: 'https://images.weserv.nl/?url=https%3A%2F%2Fscontent-for2-1.cdninstagram.com%2Fv%2Ft51.2885-19%2F508654625_18069503204057713_1823400494724732757_n.jpg%3Fefg%3DeyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0%26_nc_ht%3Dscontent-for2-1.cdninstagram.com%26_nc_cat%3D101%26_nc_oc%3DQ6cZ2QGaYjFQZldABjUuLoHflC-DcRBSuNdBPoLzmC9SBO9lH8XJGdEWyyAZf2r9Piz5xhoLhaLaFuMhZMycXYaRGd1g%26_nc_ohc%3DKjWuc5E8OJQQ7kNvwE-GWM3%26_nc_gid%3DMuDq2ulvEA5VKc3OJMC0PQ%26edm%3DALGbJPMBAAAA%26ccb%3D7-5%26oh%3D00_AffaEMu-UqErI-71ha_FCJjm3wLzaBNbhmbEwok-CWI4ew%26oe%3D68FE1AB7%26_nc_sid%3D7d3ac5&output=jpg',
-    instagram: 'https://www.instagram.com/andremclelry/',
-  },
-];
-
 export const INITIAL_LOCATIONS_DATA: TourLocation[] = [
     { id: 1, city: 'Barra do Corda', state: 'MA', local: 'Igreja Batista', date: '2023', description: 'Louvor especial Kaleo', latitude: -5.5067, longitude: -45.2409 },
     { id: 2, city: 'Itapecuru Mirim', state: 'MA', local: 'Igreja local', date: '2022', description: 'Noite de adoração', latitude: -3.3923, longitude: -44.358 },

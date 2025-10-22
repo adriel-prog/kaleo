@@ -7,7 +7,7 @@ import Members from './components/Members';
 import EventsMap from './components/EventsMap';
 import InstagramFeed from './components/InstagramFeed';
 import Footer from './components/Footer';
-import { INITIAL_MEMBERS_DATA } from './constants';
+import { parseMembersCSV } from './utils/csvParser';
 import type { BandMember } from './types';
 import ErrorBoundary from './components/ErrorBoundary';
 
@@ -19,15 +19,25 @@ function App() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    try {
-      setMembers(INITIAL_MEMBERS_DATA);
-    } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Ocorreu um erro desconhecido ao processar dados dos membros.';
-      setError(errorMessage);
-      console.error(err);
-    } finally {
-      setIsLoading(false);
-    }
+    const fetchMembers = async () => {
+      try {
+        const response = await fetch('./source/members.csv');
+        if (!response.ok) {
+          throw new Error(`Erro na rede: ${response.statusText}`);
+        }
+        const csvText = await response.text();
+        const parsedMembers = parseMembersCSV(csvText);
+        setMembers(parsedMembers);
+      } catch (err) {
+        const errorMessage = err instanceof Error ? err.message : 'Ocorreu um erro desconhecido ao carregar os dados dos membros.';
+        setError(errorMessage);
+        console.error('Falha ao buscar ou processar o CSV de membros:', err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchMembers();
   }, []);
 
   return (

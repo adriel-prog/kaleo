@@ -38,7 +38,7 @@ export const timelineData: TimelineEvent[] = [
     id: 2, 
     year: '2015', 
     description: 'Lançamento do CD Prosseguir na conferência "Somos o povo da cruz".',
-    imageUrl: 'https://images.weserv.nl/?url=https%3A%2F%2Fscontent-for2-1.cdninstagram.com%2Fv%2Ft51.2885-15%2F26157937_897552880454090_3927930175546720256_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0uaW1hZ2VfdXJsZ2VuLjcyMHg1NDAuc2RyLmYyODg1LmRlZmF1bHRfaW1hZ2UuYzIifQ%26_nc_ht%3Dscontent-for2-1.cdninstagram.com%26_nc_cat%3D102%26_nc_oc%3DQ6cZ2QFCY24AmL9EkyuZt2qGql_e7kWu7CXV-K3pC-SwHzeAKYwrvyRssXoSyZD7TwA0kQztTa6USNfDzKOngYE39QKy%26_nc_ohc%3D0GT9ychAP4sQ7kNvwESdCJF%26_nc_gid%3DHeZLxYH0qpHq2_NmKZxHNA%26edm%3DAPoiHPcBAAAA%26ccb%3D7-5%26ig_cache_key%3DMTY5NzMwOTUwNzU5MzgxNTcxNQ%253D%253D.3-ccb7-5%26oh%3D00_Afde9N_KEw6jiF67VQx8AY8iF43fGoz5MBzeXeXMh5EcAw%26oe%3D68FCB562%26_nc_sid%3D22de04&output=jpg'
+    imageUrl: 'https://i.imgur.com/fJCHdWb.jpeg'
   },
   { 
     id: 3, 

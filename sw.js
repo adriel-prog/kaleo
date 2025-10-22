@@ -1,10 +1,10 @@
 const CACHE_NAME = 'kaleo-cache-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/source/members.csv',
-  '/icon-192.svg',
-  '/icon-512.svg'
+  './',
+  './index.html',
+  './source/members.csv',
+  './icon-192.svg',
+  './icon-512.svg'
 ];
 
 self.addEventListener('install', event => {

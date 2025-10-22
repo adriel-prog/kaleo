@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     const fetchMembers = async () => {
       try {
-        const response = await fetch('/source/members.csv');
+        const response = await fetch('./source/members.csv');
         if (!response.ok) {
           throw new Error(`Falha ao buscar dados dos membros: ${response.statusText}`);
         }

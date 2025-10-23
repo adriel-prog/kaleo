@@ -49,7 +49,7 @@ const Header: React.FC = () => {
         className="absolute top-0 left-0 w-full h-[150%] bg-cover bg-center"
         style={{
           backgroundImage: `url(${config.header.bgImageUrl})`,
-          transform: `translateY(${offsetY * 0.3}px)`,
+          transform: `translateY(${offsetY * 0.5}px)`,
           willChange: 'transform'
         }}
       />

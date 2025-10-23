@@ -73,7 +73,7 @@ const Members: React.FC<MembersProps> = ({ members, isLoading, error }) => {
                   <img
                     src={member.photoUrl}
                     alt={member.name}
-                    className={`w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 ${['André Mclelry', 'Luísa Marillak', 'Beatryz Uchôa'].includes(member.name) ? 'object-top' : ''}`}
+                    className={`w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 ${['André Mclelry', 'Luísa Marillak'].includes(member.name) ? 'object-top' : ''}`}
                     onError={handleImageError}
                   />
                   {member.instagram && (

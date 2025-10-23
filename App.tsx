@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect, lazy, Suspense, useRef } from 'react';
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import About from './components/About';
@@ -13,13 +13,24 @@ import ErrorBoundary from './components/ErrorBoundary';
 // FIX: Inlined CSV data into a TS module to bypass build/fetch issues.
 // This is the most robust method, ensuring data is always available at runtime.
 import { membersCsvData } from './source/membersData';
+import PortfolioPDF from './components/PortfolioPDF';
 
 const AiAgent = lazy(() => import('./components/AiAgent'));
+
+// Declare global types for CDN libraries
+declare global {
+  interface Window {
+    html2canvas: any;
+    jspdf: any;
+  }
+}
 
 function App() {
   const [members, setMembers] = useState<BandMember[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
+  const pdfRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const loadMembers = () => {
@@ -39,12 +50,48 @@ function App() {
     loadMembers();
   }, []);
 
+  const generatePdf = async () => {
+    if (!pdfRef.current || isGeneratingPdf) {
+      return;
+    }
+    setIsGeneratingPdf(true);
+    try {
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      
+      const pages = pdfRef.current.children;
+
+      for (let i = 0; i < pages.length; i++) {
+        const page = pages[i] as HTMLElement;
+        const canvas = await window.html2canvas(page, {
+          scale: 2,
+          useCORS: true,
+        });
+        const imgData = canvas.toDataURL('image/png');
+
+        if (i > 0) {
+          pdf.addPage();
+        }
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      }
+
+      pdf.save('portfolio-kaleo.pdf');
+    } catch (error) {
+      console.error("Erro ao gerar o PDF:", error);
+      alert("Ocorreu um erro ao gerar o PDF. Por favor, tente novamente.");
+    } finally {
+      setIsGeneratingPdf(false);
+    }
+  };
+
   return (
     <div className="bg-background">
       <Navigation />
       <Header />
       <main>
-        <About />
+        <About generatePdf={generatePdf} isGeneratingPdf={isGeneratingPdf} />
         <Timeline />
         <Members members={members} isLoading={isLoading} error={error} />
         <EventsMap />
@@ -56,6 +103,8 @@ function App() {
           <AiAgent members={members} />
         </Suspense>
       </ErrorBoundary>
+      {/* PDF content, rendered off-screen */}
+      <PortfolioPDF members={members} pdfRef={pdfRef} />
     </div>
   );
 }

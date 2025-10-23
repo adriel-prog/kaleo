@@ -1,3 +1,12 @@
 export const membersCsvData = `id,name,role,photoUrl,instagram
-1,Andre,Vocal,"https://images.weserv.nl/?url=https%3A%2F%2Fscontent-for2-1.cdninstagram.com%2Fv%2Ft51.2885-19%2F508654625_18069503204057713_1823400494724732757_n.jpg%3Fefg%3DeyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0%26_nc_ht%3Dscontent-for2-1.cdninstagram.com%26_nc_cat%3D101%26_nc_oc%3DQ6cZ2QGaYjFQZldABjUuLoHflC-DcRBSuNdBPoLzmC9SBO9lH8XJGdEWyyAZf2r9Piz5xhoLhaLaFuMhZMycXYaRGd1g%26_nc_ohc%3DKjWuc5E8OJQQ7kNvwE-GWM3%26_nc_gid%3DMuDq2ulvEA5VKc3OJMC0PQ%26edm%3DALGbJPMBAAAA%26ccb%3D7-5%26oh%3D00_AffaEMu-UqErI-71ha_FCJjm3wLzaBNbhmbEwok-CWI4ew%26oe%3D68FE1AB7%26_nc_sid%3D7d3ac5&output=jpg","https://www.instagram.com/andremclelry/"
-2,Adriel Victor,Tecladista,"https://i.imgur.com/89KowcN.jpeg","https://www.instagram.com/"`;
+1,André Mclelry,Vocal,"https://lh3.googleusercontent.com/d/1uhKNqMxBptsUFvsKm0QU2qcg-_Whe06_","https://www.instagram.com/andremclelry/"
+2,Adriel Victor,Tecladista,"https://i.imgur.com/89KowcN.jpeg","https://www.instagram.com/adrielvictor/"
+3,Beatryz Uchôa,Vocal,"https://lh3.googleusercontent.com/d/1BSoT0gIrxbxfk-hChwjGAzSISM2b965v","https://www.instagram.com/beatryzuchoa_/"
+4,Priscila de Sousa Lima,Vocal,"https://lh3.googleusercontent.com/d/1zrFF7L-LnQ3GN1qv3YGtNrp73B9-ZX3o","https://www.instagram.com/priscilalean/"
+5,Paulo Fernando,Guitarra,"https://lh3.googleusercontent.com/d/1GiIhGu3GvmcgloAuauwcgd0GDdvaROnF","https://www.instagram.com/paulofernancouto/"
+6,Marcos Vinicius,Violão,"https://lh3.googleusercontent.com/d/1YKXz8r0Y1PBo0jkUpZF3kU3b373NpuQd","https://www.instagram.com/marcosxsousa808/"
+7,Thiago Barbosa de Souza,Vocal,"https://lh3.googleusercontent.com/d/1fiShtpmP34O_S0ZZsTbY_i2c_ESxIj9n","https://www.instagram.com/thiagosouzacx/"
+8,John David,Bateria,"https://lh3.googleusercontent.com/d/1s2VB03nJgiBBUvF6UQevabB_EOCsFjVu","https://www.instagram.com/joohn_david/"
+9,Francisco Tupinambá,Vocal,"https://lh3.googleusercontent.com/d/1lBWC_ocafNmKnDFr7D9k_IaMGEmrlM5j",""
+10,Filipe Asafe,Bateria,"https://lh3.googleusercontent.com/d/1zgArbatHRSvj1Rl6ZNdE8T8PEuPCXLjy",""
+`;

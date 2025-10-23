@@ -54,27 +54,79 @@ function App() {
     if (!pdfRef.current || isGeneratingPdf) {
       return;
     }
+
+    // Check if the required PDF generation libraries are available on the window object.
+    if (typeof window.html2canvas === 'undefined' || typeof window.jspdf === 'undefined') {
+        console.error("PDF generation libraries not loaded.");
+        alert("Não foi possível carregar as bibliotecas para gerar o PDF. Verifique sua conexão e tente novamente.");
+        return;
+    }
+
     setIsGeneratingPdf(true);
+
     try {
+      const elementToCapture = pdfRef.current;
+      
+      // Preload all images (both <img> tags and CSS background-images) within the PDF content.
+      // This step is crucial to prevent "tainted canvas" errors from html2canvas, which occur when
+      // the script tries to render an image that hasn't fully loaded, especially from a different origin.
+      const images = Array.from(elementToCapture.getElementsByTagName('img'));
+      const backgroundElements = Array.from(elementToCapture.querySelectorAll('[style*="background-image"]')) as HTMLElement[];
+      const imagePromises: Promise<any>[] = [];
+
+      // Create promises for <img> tags
+      images.forEach(img => {
+        const newImg = new Image();
+        newImg.crossOrigin = 'anonymous'; // Set crossOrigin to handle CORS images properly.
+        const promise = new Promise((resolve, reject) => {
+          newImg.onload = resolve;
+          newImg.onerror = reject;
+        });
+        // FIX: Cast `img` to `HTMLImageElement` to access the 'src' property. TypeScript was incorrectly inferring its type as 'unknown'.
+        newImg.src = (img as HTMLImageElement).src;
+        imagePromises.push(promise);
+      });
+
+      // Create promises for background-image styles
+      backgroundElements.forEach(el => {
+        const match = el.style.backgroundImage.match(/url\("?(.+?)"?\)/);
+        if (match) {
+          const url = match[1];
+          const newImg = new Image();
+          newImg.crossOrigin = 'anonymous';
+          const promise = new Promise((resolve, reject) => {
+            newImg.onload = resolve;
+            newImg.onerror = reject;
+          });
+          newImg.src = url;
+          imagePromises.push(promise);
+        }
+      });
+      
+      // Wait for all image loading promises to resolve.
+      await Promise.all(imagePromises);
+      
       const { jsPDF } = window.jspdf;
       const pdf = new jsPDF('p', 'mm', 'a4');
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = pdf.internal.pageSize.getHeight();
       
-      const pages = pdfRef.current.children;
+      const pages = elementToCapture.children;
 
       for (let i = 0; i < pages.length; i++) {
         const page = pages[i] as HTMLElement;
         const canvas = await window.html2canvas(page, {
           scale: 2,
-          useCORS: true,
+          useCORS: true, // Required for cross-origin images.
+          allowTaint: false,
+          backgroundColor: '#ffffff', // Ensures content with transparent backgrounds is captured correctly.
         });
         const imgData = canvas.toDataURL('image/png');
 
         if (i > 0) {
           pdf.addPage();
         }
-        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST');
       }
 
       pdf.save('portfolio-kaleo.pdf');

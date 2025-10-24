@@ -1,10 +1,9 @@
-const CACHE_NAME = 'kaleo-cache-v2';
+const CACHE_NAME = 'kaleo-cache-v3';
 const urlsToCache = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/icon-192.svg',
-  '/icon-512.svg'
+  '/19dd40bc-8685-42eb-8bc8-a6fe0c3c063f.jpg'
 ];
 
 // Evento de instalação: armazena em cache o shell do aplicativo

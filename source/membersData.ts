@@ -9,5 +9,5 @@ export const membersCsvData = `id,name,role,photoUrl,instagram
 8,John David,Bateria,"https://lh3.googleusercontent.com/d/1s2VB03nJgiBBUvF6UQevabB_EOCsFjVu","https://www.instagram.com/joohn_david/"
 9,Francisco Tupinambá,Vocal,"https://lh3.googleusercontent.com/d/1lBWC_ocafNmKnDFr7D9k_IaMGEmrlM5j",""
 10,Filipe Asafe,Bateria,"https://lh3.googleusercontent.com/d/1zgArbatHRSvj1Rl6ZNdE8T8PEuPCXLjy",""
-11,Luísa Marillak,Acessora,"https://lh3.googleusercontent.com/d/1LsiuBaxQujp5EBsEcRFqNveVEBHIm9aN","https://www.instagram.com/marillakqueiroz25/"
+11,Luísa Marillak,Assessora,"https://lh3.googleusercontent.com/d/1LsiuBaxQujp5EBsEcRFqNveVEBHIm9aN","https://www.instagram.com/marillakqueiroz25/"
 `;

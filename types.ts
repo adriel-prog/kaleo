@@ -11,6 +11,7 @@ export interface BandMember {
   role: string;
   photoUrl: string;
   instagram: string;
+  photoPosition?: string;
 }
 
 export interface TourLocation {

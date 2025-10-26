@@ -10,10 +10,9 @@ import Footer from './components/Footer';
 import { parseMembersCSV } from './utils/csvParser';
 import type { BandMember } from './types';
 import ErrorBoundary from './components/ErrorBoundary';
-// FIX: Inlined CSV data into a TS module to bypass build/fetch issues.
-// This is the most robust method, ensuring data is always available at runtime.
-import { membersCsvData } from './source/membersData';
+import { config } from './config';
 import PortfolioPDF from './components/PortfolioPDF';
+import { membersCsvData } from './source/membersData';
 
 const AiAgent = lazy(() => import('./components/AiAgent'));
 
@@ -33,15 +32,37 @@ function App() {
   const pdfRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const loadMembers = () => {
+    const loadMembers = async () => {
+      setIsLoading(true);
       try {
-        // The CSV content is now imported from a dedicated TS module.
-        const parsedMembers = parseMembersCSV(membersCsvData);
+        const response = await fetch(config.members.googleSheetUrl);
+        if (!response.ok) {
+          throw new Error(`Falha ao carregar a planilha: ${response.statusText}`);
+        }
+        const csvText = await response.text();
+        const parsedMembers = parseMembersCSV(csvText);
+        
+        if (parsedMembers.length === 0) {
+            throw new Error('Nenhum membro encontrado na planilha.');
+        }
+
         setMembers(parsedMembers);
+        setError(null);
       } catch (err) {
-        const errorMessage = err instanceof Error ? err.message : 'Ocorreu um erro desconhecido ao carregar os dados dos membros.';
-        setError(errorMessage);
-        console.error('Falha ao processar o CSV de membros:', err);
+        const fetchErrorMessage = err instanceof Error ? err.message : 'Ocorreu um erro desconhecido.';
+        console.error('Falha ao buscar dados da web:', err);
+        
+        // Fallback to local data
+        try {
+            console.log('Tentando carregar dados locais dos membros...');
+            const parsedMembers = parseMembersCSV(membersCsvData);
+            setMembers(parsedMembers);
+            setError('Não foi possível carregar os dados mais recentes. Exibindo dados locais.'); // Set a warning instead of a hard error
+        } catch (localErr) {
+            const localErrorMessage = localErr instanceof Error ? localErr.message : 'Ocorreu um erro desconhecido.';
+            console.error('Falha ao processar CSV local:', localErr);
+            setError(`Erro ao carregar dados online (${fetchErrorMessage}) e locais (${localErrorMessage}).`);
+        }
       } finally {
         setIsLoading(false);
       }

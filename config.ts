@@ -5,7 +5,7 @@ export const config = {
   header: {
     title: 'KALEO',
     subtitle: 'Ministério de Louvor da IBPAZ',
-    bgImageUrl: 'https://images.weserv.nl/?url=https%3A%2F%2Fscontent-for2-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F554982451_18304620994216915_7180656637068907892_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D103%26ig_cache_key%3DMzczMTg4ODQ4ODIxNzIzMzI2NQ%253D%253D.3-ccb1-7%26ccb%3D1-7%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4OTU5LnNkci5DMyJ9%26_nc_ohc%3Dzv9s8PrPbeQQ7kNvwGwDeDG%26_nc_oc%3DAdkRYEbabgUBzqoUvYv7MLS_aD3pfDtKbxCQCb5MqetA-CyUFDRcYlusMf1NgcSTMVURPTIZlhRVerRDl9Apf7nW%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-for2-2.cdninstagram.com%26_nc_gid%3DQklDljX4OXSEqESEZeiMxQ%26oh%3D00_AfcWWbXXYOqD8NdMb00sLOLkyNVmK94yyMk1GS9j0y375g%26oe%3D68FCAC47&output=jpg',
+    bgImageUrl: 'https://images.weserv.nl/?url=https%3A%2F%2Flh3.googleusercontent.com%2Fd%2F1fUNREMEzZWJaGD8hU9bHqk_gbbtLtYbt',
   },
 about: {
   title: 'Nossa História',
@@ -16,6 +16,9 @@ about: {
     'Hoje, após 11 anos de história, o KALEO segue sendo uma voz viva que inspira fé, unidade e adoração genuína — proclamando que vale a pena prosseguir quando o foco é Cristo.'
   ],
 },
+  members: {
+    googleSheetUrl: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTdlAhFMHLXLd7gs9PFNspE6ub0RIlq4V6UUl-3R3mxCMF0oGm1fChRQR040MJ_PhdA82eBKa5rNABL/pub?gid=1087220110&single=true&output=csv',
+  },
   instagram: {
       embedUrl: 'https://www.instagram.com/ministeriokaleooficial/embed/',
       profileUrl: 'https://www.instagram.com/ministeriokaleooficial/',

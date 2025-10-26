@@ -10,6 +10,24 @@ interface PortfolioPDFProps {
 const A4_WIDTH_PX = 794;
 const A4_HEIGHT_PX = 1123;
 
+// Helper function to determine image alignment class, ensuring consistency with the Members component.
+const getObjectPositionClass = (position?: string): string => {
+  const pos = position?.toLowerCase().trim();
+  switch (pos) {
+    case 'top': return 'object-top';
+    case 'bottom': return 'object-bottom';
+    case 'left': return 'object-left';
+    case 'right': return 'object-right';
+    case 'left top': return 'object-left-top';
+    case 'left bottom': return 'object-left-bottom';
+    case 'right top': return 'object-right-top';
+    case 'right bottom': return 'object-right-bottom';
+    case 'center':
+    default:
+      return 'object-center';
+  }
+};
+
 const PDFPage: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className }) => (
   <div
     className={`bg-white w-full flex flex-col ${className}`}
@@ -55,7 +73,7 @@ const PortfolioPDF: React.FC<PortfolioPDFProps> = ({ members, pdfRef }) => {
               <img
                 src={member.photoUrl}
                 alt={member.name}
-                className="w-32 h-32 mx-auto rounded-full object-cover shadow-lg mb-4"
+                className={`w-32 h-32 mx-auto rounded-full object-cover shadow-lg mb-4 ${getObjectPositionClass(member.photoPosition)}`}
                 crossOrigin="anonymous"
               />
               <h3 className="font-display font-bold text-xl text-primary">{member.name}</h3>
